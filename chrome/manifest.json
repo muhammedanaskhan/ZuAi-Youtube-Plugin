@@ -1,0 +1,39 @@
+{
+  "manifest_version": 3,
+  "version": "0.0.1",
+  "name": "chrome-react-boilerplate",
+  "description": "chrome-react-boilerplate",
+  "action": {
+    "default_title": "chrome-react-boilerplate",
+    "default_popup": "popup/index.html"
+  },
+  "icons": {
+    "16": "img/logo.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["lib/log.js", "inject.bundle.js"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "js": [
+        "content_script.bundle.js"
+      ],
+      "run_at": "document_end"
+    }
+  ],
+  "background": {
+    "service_worker": "background.bundle.js",
+    "type": "module"
+  },
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "options_page": "options/index.html",
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self';"
+  }
+}
