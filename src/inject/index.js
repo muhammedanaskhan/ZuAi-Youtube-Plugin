@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
+import Card from '../components/Card';
 
 // web_accessible_resources libs (chrome/lib):
 window.Log('this is inject script!');
@@ -7,13 +8,8 @@ window.Log('this is inject script!');
 class Inject extends Component {
   render() {
     return (
-      <div
-        style={{
-          background: '#880808',
-          height: 40,
-        }}
-      >
-        this is inject scripts!
+      <div>
+        <Card/>
       </div>
     );
   }
