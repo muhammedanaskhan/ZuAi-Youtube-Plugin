@@ -2,9 +2,14 @@ import React from 'react'
 
 function Card() {
   return (
-    <div>
-        
-    </div>
+    <div
+        style={{
+          background: '#880808',
+          height: 40,
+        }}
+      >
+        this is inject scripts!
+      </div>
   )
 }
 
